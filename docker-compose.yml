@@ -1,0 +1,32 @@
+services:
+  postgres:
+    # Usa a imagem oficial do Postgres versão 16
+    image: postgres:16
+
+    # Nome do container - útil para identificar depois
+    container_name: meu_postgres_dev
+
+    # Variáveis de ambiente que configuram o Postgres
+    environment:
+      # Nome do banco que será criado automaticamente
+      POSTGRES_DB: meuapp_dev
+      # Usuário padrão (postgres é o default)
+      POSTGRES_USER: postgres
+      # Senha - NUNCA use essa em produção!
+      POSTGRES_PASSWORD: postgres123
+
+    # Mapeia a porta 5432 do container para sua máquina
+    # formato: porta_sua_maquina:porta_container
+    ports:
+      - "5432:5432"
+
+    # Volume para persistir os dados mesmo se derrubar o container
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    # Reinicia automaticamente se o container cair
+    restart: unless-stopped
+
+# Define o volume nomeado para persistência
+volumes:
+  postgres_data:

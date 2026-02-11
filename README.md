@@ -6,7 +6,7 @@
 O projeto é projetado para ser **altamente performático e resiliente**, utilizando uma arquitetura de processamento assíncrono para lidar com uploads e otimização de mídia em escala.
 ---
 # **MODELO MENTAL: esboco inicial**
-![Fluxo do Pipeline de Processamento](./assets/pipeline_flow.png)
+![Fluxo do Pipeline de Processamento](.docs/assets/pipeline_flow.png)
 ---
 
 ## 🚀 Sobre o Projeto

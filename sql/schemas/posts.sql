@@ -1,6 +1,7 @@
-
+-- name: CreatePostEnum
 CREATE TYPE post_status AS ENUM ('pending','processing','completed','failed');
 
+-- name: CreatePostTable
 CREATE TABLE posts(
 	id BIGSERIAL PRIMARY KEY ,
 	user_id BIGINT NOT NULL REFERENCES	users(id),

@@ -31,3 +31,9 @@ go.work.sum
 # .idea/
 # .vscode/
 .zed
+
+# Configs
+sqlc.yml
+
+# Developer
+images

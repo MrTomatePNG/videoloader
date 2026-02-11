@@ -4,14 +4,14 @@ services:
     image: postgres:16
 
     # Nome do container - útil para identificar depois
-    container_name: meu_postgres_dev
+    container_name: database_dev
 
     # Variáveis de ambiente que configuram o Postgres
     environment:
       # Nome do banco que será criado automaticamente
-      POSTGRES_DB: meuapp_dev
+      POSTGRES_DB: iffuny_droid
       # Usuário padrão (postgres é o default)
-      POSTGRES_USER: postgres
+      POSTGRES_USER: dev
       # Senha - NUNCA use essa em produção!
       POSTGRES_PASSWORD: postgres123
 

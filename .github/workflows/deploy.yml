@@ -19,7 +19,9 @@ jobs:
           username: projeto-m
           key: ${{ secrets.DEPLOY_KEY }}
           script: |
+            export PATH=$PATH:/usr/local/go/bin:$HOME/.bun/bin
             cd /opt/projeto-m
+            git config --global --add safe.directory /opt/projeto-m
             git pull origin main
 
             # Build frontend
@@ -31,5 +33,11 @@ jobs:
             # Build backend
             go build -o backend ./cmd/api
 
-            # Restart service
+            # Copy Caddyfile
+            sudo cp Caddyfile /etc/caddy/Caddyfile
+
+            # Reload Caddy
+            sudo systemctl reload caddy
+
+            # Restart backend service
             sudo systemctl restart projeto-m

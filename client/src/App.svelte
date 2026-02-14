@@ -13,11 +13,8 @@
 
 <main class="app-container">
     <aside class="area-ranking">
-        <div class="content">Ranking / Mais Comentados</div>
-    </aside>
-
-    <aside class="area-user">
-        <div class="content">User Info</div>
+        <div class="content ranking-comments">Ranking / Mais Comentados</div>
+        <div class="content options">Options / Support</div>
     </aside>
 
     <article class="area-main">
@@ -36,10 +33,10 @@
 
 <style lang="scss">
     // Variáveis para manter o padrão
-    $gap: 10px;
-    $border-radius: 12px;
+    $gap: 3px;
+    $border-radius: 0;
     $bg-card: #121212;
-    $border-color: #333;
+    $border-color: red;
 
     .app-container {
         // 1. Ocupa a tela toda e trava o scroll
@@ -55,12 +52,12 @@
         // 2. Definindo 3 colunas e 2 linhas
         // Colunas: laterais fixas e centro flexível (1fr)
         grid-template-columns: 300px 1fr 300px;
-        grid-template-rows: 1.5fr 1fr;
+        grid-template-rows: 1fr 12fr;
 
         // 3. O "Mapa" do seu desenho
         grid-template-areas:
             "ranking   main   notif"
-            "user      main   chats";
+            "ranking      main   chats";
     }
 
     // Estilo comum para as caixas (Wireframe)
@@ -77,6 +74,13 @@
     // Atribuindo cada classe à sua área no mapa
     .area-ranking {
         grid-area: ranking;
+        .ranking-comments {
+            height: 60%;
+            border-bottom: 1px solid $border-color;
+        }
+        .options {
+            display: flex;
+        }
     }
     .area-user {
         grid-area: user;

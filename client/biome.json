@@ -23,6 +23,9 @@
   "css": {
     "parser": {
       "cssModules": true
+    },
+    "formatter": {
+      "indentStyle": "space"
     }
   },
   "linter": {
